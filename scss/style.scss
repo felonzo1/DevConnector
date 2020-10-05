@@ -1,0 +1,614 @@
+@import "component/button";
+@import "component/form";
+@import "component/mixin";
+@import "component/variable";
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    line-height: 1.6;
+    overflow-x: hidden;
+    font-family: "Raleway", sans-serif;
+}
+// Navbar 
+.navbar {
+    background-color: $dark-color;
+    width: 100%;
+    border-bottom: 2px solid $primary-color;
+}
+
+.container {
+    width:$max-width;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .5rem;
+
+    
+    @media (max-width: $md-bp){
+       display: block;
+
+    }
+}
+
+// Nav List
+.nav {
+    display: flex;
+    position: relative;
+    transition: all 8s ease-in;
+
+    @media (max-width: $md-bp){
+        display:none;
+        transition: all 8s ease-in;
+    }
+
+    &__item {
+        list-style-type: none;
+    }
+
+    &__link {
+        padding: .5rem;
+        color: $light-color;
+        transition: all .2s ease-in-out;
+        font-family: "Raleway", sans-serif;
+
+        @media (max-width: $md-bp){
+            padding: .5rem;
+            margin-bottom: .5rem;
+            display: flex;
+            justify-content: center;
+        }
+        @media (max-width: $sm-bp){
+            padding: .5rem;
+            margin-bottom: .5rem;
+            display: flex;
+            justify-content: center;
+        }
+        }
+    &__link:hover {
+            color: #17a2b8;
+            transition: all .2s ease-in-out;
+    }
+
+}
+.menu i {
+    position: absolute;
+    top: 3%;
+    left: 80%;
+    color: #fff;
+    padding: .5rem;
+    display: none;
+    cursor: pointer;
+
+    &:hover {
+        color: $primary-color;
+        transition: all .2s ease;
+    }
+}
+@media (max-width: $md-bp) {
+    .menu i {
+        display:block;
+        transition: all .2s ease;
+    }
+}
+
+@media (max-width: $sm-bp){
+    .menu i {
+        display: block;
+    }
+}
+
+.show {
+    display: block;
+}
+
+// Logo Brand
+h1 a {
+    color: $light-color;
+    font-family: "Raleway", sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    @media (max-width: $md-bp){
+      display: flex;
+      justify-content: center;
+      padding: 1rem;
+      align-items: center;
+      font-size: 1.5rem;
+ 
+     }
+    @media (max-width: $sm-bp){
+      display: flex;
+      justify-content: center;
+      padding: 1rem;
+      align-items: center;
+      font-size: 1.5rem;
+ 
+     }
+
+    &:hover {
+        color: $primary-color;
+        transition: all .2s ease-in-out;
+    }
+}
+
+// Show case Area
+.landing {
+    background-image: url(../img/showcase.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+}
+
+.dark-overlay {
+    background-image: linear-gradient(rgba( 0, 0, 0, .7), rgba( 0, 0, 0, .7));
+    height: inherit;
+    position: relative;
+}
+
+.landing-inner {
+    display: flex;
+    flex-direction: column;
+    justify-content:  center;
+    align-items: center;
+    padding-top: 10rem;
+    color: $light-color;
+    text-align: center;
+
+   h1 {
+       font-size: 3.5rem;
+       font-family: "Raleway", sans-serif;
+       padding: .5rem;
+
+       @media (max-width: $sm-bp){
+        font-size: 1.5rem;
+    }
+   }
+
+   .lead {
+       font-size: 1.5rem;
+       font-family: "Raleway", sans-serif;
+       align-self: center;
+
+       @media (max-width: $sm-bp){
+        font-size: 1rem;
+        width: 80%;
+    }
+
+    
+   }
+}
+
+// Sign /Create Section
+.sign-up {
+    margin: 4rem auto;
+    width:$width;
+
+    &__credential {
+        width: 100%;
+        background-color: $danger-color;
+        padding: 1rem;
+        color: $light-color;
+    }
+
+    &__heading {
+        font-size: 3rem;
+        @include heading;
+    }
+
+    &__text {
+        @include text;
+        margin-bottom: .5rem;
+        font-size: 2rem;
+    }
+    &__text2 {
+        margin-top: 1rem;
+    }
+
+    &__link {
+        @include global-link;
+        font-size: 1rem;
+        font-family: "Raleway", sans-serif;
+        padding: .5rem;
+        color: $primary-color;
+    }
+}
+// Global link
+a {
+    @include  global-link;
+}
+
+.developer {
+    width: $width;
+    margin: 4rem auto;
+
+    &__heading {
+        @include heading;
+        font-size: 3rem;
+
+        @media (max-width: $md-bp) {
+                font-size: 2rem;
+                text-align: center;
+            }
+    }
+
+    &__text {
+        @include text;
+        font-size: 1.5rem;
+
+        @media (max-width: $md-bp) {
+                font-size: 1rem;
+                text-align: center;
+                margin-bottom: 1rem;
+            }
+    }
+    // Profile Section
+    .developer-profile {
+        display: flex;
+        align-items: center;
+        background-color: $light-color;
+        padding: 1rem;
+        border: 1px solid $grey-color;
+
+        &__img {
+            height: 20%;
+            width: 20%;
+            border-radius: 50%;
+            margin-right: 1rem;
+            border: 1px solid $primary-color;
+
+            @media (max-width: $md-bp) {
+                height: 50%;
+                width: 50%;
+                }
+        }
+
+        &__details {
+            flex: 1;
+            display: flex;
+
+            @media (max-width: $md-bp) {
+                display: block;
+                text-align: center;
+                }
+        }
+
+        &__title {
+            @include heading;
+            font-size: 2rem;
+            color: #444;
+        }
+
+        &__subtitle {
+            @include text;
+            font-size: 1rem;
+            margin-bottom: .7rem;
+
+            a {
+                color: $primary-color;
+            }
+        }
+
+        
+        &__work {
+            flex: 0 0 20%;
+            color: #17a2b8;
+
+         @media (max-width: $md-bp) {
+            display: none;
+        }
+ 
+        }
+
+        &__text-color {
+            color: $primary-color;
+        }
+    }
+
+    @media (max-width: $md-bp) {
+        .developer-profile  {
+            flex-direction: column;
+        }
+    }
+
+}
+
+.developer, .developer-skill {
+    width: $width;
+    margin: 3 auto;
+}
+
+.profile {
+    @include property;
+    background-color: $primary-color;
+    height: 25rem;
+  
+
+    &__details {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 4rem;
+    }
+    
+    &__img {
+        height: 20%;
+        width: 20%;
+        border-radius: 50%;
+        margin-right: 1rem;
+        border: 1px solid $primary-color;
+
+        @media (max-width: $md-bp) {
+            height: 30%;
+            width: 30%;
+        }
+    }
+
+    &__text {
+        text-align: center;
+    }
+
+    &__title {
+        @include heading;
+        font-size: 2.5rem;
+        color: $light-color;
+    }
+
+    &__subtitle {
+        @include text;
+        color: $light-color;
+        font-size: 1rem;
+        padding: .5rem;
+
+        a {
+            color: $light-color;
+        }
+    }
+}
+
+.developer-skill {
+    overflow-x: hidden;
+    width:$width;
+    margin: 3rem auto;
+    // height: 25rem;
+    background-color: $light-color;
+    text-align: center;
+    padding: 1rem 3rem;
+    border-radius: 1px;
+    border: 1px solid $grey-color;
+
+    &__heading {
+        font-size: 2rem;
+        @include heading;
+       
+        a {
+            color: $primary-color;
+        }
+    }
+
+    &__text {
+        @include text;
+        font-size: 1rem;
+        padding-bottom: 1rem;
+    }
+
+    &__work {
+       padding: 2rem;
+    }
+
+    &__job {
+        display: flex;
+        justify-content: center;
+
+        @media (max-width: $md-bp) {
+            flex-direction: column;
+        }
+
+        h5 {
+            margin-right: 1rem;
+            padding: 1rem;
+            font-size: 1rem;
+            color: $dark-color;
+        }
+    }
+
+}
+
+.work {
+    width: $width;
+    margin: 0 auto;
+    display: flex;
+    padding-bottom: 2rem;
+
+    @media (max-width: $md-bp) {
+        flex-direction: column;
+    }
+
+    .experience {
+        flex: 0 0 50%;
+        background-color: $light-color;
+        margin-right: 1rem;
+        padding: 1rem 2rem;
+        border-radius: 1px;
+        border: 1px solid $grey-color;
+        margin-bottom: 1rem;
+        
+    @media (max-width: $md-bp) {
+        margin-right: 0;
+        padding: 1rem 3rem;
+    }
+
+
+        &__heading {
+            @include heading;
+            font-size: 1.5rem;
+        }
+
+        &__work {
+            @include text;
+            font-size: 1.2rem;
+            color: $dark-color;
+            margin-top: .5rem;
+        }
+
+        &__date, &__position, &__description {
+            @include text;
+            font-size: 1rem;
+            color: $dark-color;
+            margin-top: .5rem;
+        }
+    }
+
+    .education {
+        flex: 0 0 1;
+        background-color: $light-color;
+        padding: 1rem 2rem;
+        border-radius: 1px;
+        border: 1px solid $grey-color;
+
+        &__heading {
+            @include heading;
+            font-size: 1.5rem;
+        }
+
+        &__school{
+            @include text;
+            font-size: 1rem;
+            color: $dark-color;
+            margin-top: .5rem;
+        }
+
+        &__date, &__degree, &__course, &__description {
+            @include text;
+            font-size: 1rem;
+            color: $dark-color;
+            margin-top: .5rem;
+        }
+    }
+}
+
+// Dashboard Section
+.dashboard {
+    width: $width;
+    margin: 2rem auto;
+
+    @media (max-width: $md-bp) {
+       width: $max-width;
+    }
+
+    &__heading {
+        @include heading;
+        font-size: 3rem;
+        font-weight: bold;
+
+        @media (max-width: $md-bp) {
+            font-size: 1.5rem;
+        }
+    }
+
+    &__text {
+        @include text;
+        font-size: 1rem;
+        color: $dark-color;
+        margin-bottom: 1rem;
+    }
+
+    &__link-area {
+        display: flex;
+        justify-content:flex-start;
+        align-items: center;
+        margin-right: 1rem;
+
+        @media (max-width: $md-bp) {
+            width: $width;
+            justify-content: flex-start;
+            flex-direction: column;
+            align-items: flex-start;
+
+            .btn {
+                width: 80vw;
+
+            }
+        }
+    }
+}
+
+.experience-credential {
+    margin-top: 2rem;
+
+    @media (max-width: $md-bp) {
+       width: 70%;
+    }
+
+    &__text {
+        @include heading;
+        font-size: 1.5rem;
+        font-weight: bold;
+        padding: 1rem 0;
+        color: $dark-color;
+
+        
+        @media (max-width: $md-bp) {
+            font-size: 1rem;
+        }
+    }
+
+    &__table {
+
+        table {
+            margin-bottom: 3rem;
+            table-layout: fixed;
+            text-align: start;
+
+
+            th {
+                background-color: $light-color;
+                padding: .8rem;
+                margin-right: 1rem;
+                color: $dark-color;
+                font-size: 1rem;
+
+                // @media (max-width: $md-bp) {
+                //     padding: .5rem .2rem;
+                //     width: 20px ;
+                //     font-size: .5rem;
+                // }
+            }
+
+            .table-head{
+                @media (max-width: $md-bp) {
+                   display: none;
+
+                }
+            }
+
+            td {
+                padding: 1rem;
+                color: $dark-color;
+
+                @media (max-width: $md-bp) {
+                   padding: .5rem;
+                   font-size: .8rem;
+                 }
+                
+                a {
+                    background-color: $danger-color;
+                    color: #fff;
+                }
+            }
+
+            .table-data{
+                @media (max-width: $md-bp) {
+                   display: none;
+                }
+            }
+
+        }
+    }
+}
+

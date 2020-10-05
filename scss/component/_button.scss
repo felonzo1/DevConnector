@@ -1,0 +1,61 @@
+$primary-color: #17a2b8;
+$primary-ligt-color: #2eb7cc;
+$dark-color: #343a40;
+$light-color: #f4f4f4;
+$danger-color: #dc3545;
+$danger-light-color: #f05160;
+$success-color: #28a745;
+$box-shadow: 0 1rem 2rem rgba(0, 0, 0, .25);
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+
+
+}
+
+.btn {
+    padding: .5rem 2rem;
+    margin-top: 1rem;
+    background-color: $light-color;
+    border-radius: 5px;
+    border: 0;
+    cursor: pointer;
+    margin-right: 1rem;
+}
+
+
+// Global Button
+.btn-outline-dark {
+    color: $dark-color;
+
+    &:hover {
+        background-color: $dark-color;
+        color: $light-color;
+        transition: all .2s ease-in-out;
+    }
+}
+
+.btn-primary {
+    color: $light-color;
+    margin-right: 2rem;
+    background-color: $primary-color;
+
+    &:hover {
+        background-color: $primary-ligt-color;
+        transition: all .2s ease-in-out;
+    }
+  }
+
+.btn-danger {
+    color: $light-color;
+    margin-right: 2rem;
+    background-color: $danger-color;
+
+    &:hover {
+        background-color: $danger-light-color;
+        transition: all .2s ease-in-out;
+    }
+  }

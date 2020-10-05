@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" />
+    <link rel="stylesheet" href="./css/all.css">
+
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Welcome to the DevConnector</title>
+</head>
+
+<body>
+    <nav class="navbar bg-dark">
+        <div class="container">
+            <h1>
+                <a href="dashboard.html" class="logo-brand"> <i class="fas fa-code"></i> DevConnector </a>
+            </h1>
+            <ul class="nav">
+                <li class="nav__item"><a class="nav__link" href="developer.html">Developers</a></li>
+                <li class="nav__item"><a class="nav__link" href="register.html">Post</a></li>
+                <li class="nav__item"><a class="nav__link" href="login.html">Dashboard</a></li>
+                <li class="nav__item"><a class="nav__link" href="login.html">Logout</a></li>
+            </ul>
+        </div>
+        <div class="menu">
+            <i class="fas fa-bars fa-2x"></i>
+        </div>
+    </nav>
+    <section class="dashboard">
+        <h1 class="dashboard__heading">Dashboard</h1>
+        <p class="dashboard__text">Welcome Olatubora Felix</p>
+        <div class="dashboard__link-area">
+            <a href="create-profile.html" class="btn btn-outline-dark">Edit Profile</a>
+            <a href="add-experience.html" class="btn btn-outline-dark">Add Experience</a>
+            <a href="add-education.html" class="btn btn-outline-dark">Add Education</a>
+        </div>
+
+        <div class="experience-credential">
+            <h2 class="experience-credential__text">Experience Credentials</h2>
+            <div class="experience-credential__table">
+                <table>
+                    <tr>
+                        <th>Company</th>
+                        <th class="table-head">Title</th>
+                        <th class="table-head">Year</th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <td>NYSC-Ministry of Inno,Sci & Tech</td>
+                        <td class="table-data">System Administrator</td>
+                        <td class="table-data">Nov 25th 2019 - Oct15th 2020</td>
+                        <td><a href="#" class="btn">Delete</a></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="educatin-credential">
+            <h2 class="experience-credential__text">Education Credentials</h2>
+            <div class="experience-credential__table">
+                <table>
+                    <tr>
+                        <th>School</th>
+                        <th class="table-head">Degree</th>
+                        <th class="table-head">Year</th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <td>Edo State Polytechnic Usen, Edo State</td>
+                        <td class="table-data">HND</td>
+                        <td class="table-data">November 14th 2014 - July 29th 2020</td>
+                        <td><a href="#" class="btn btn-danger">Delete</a></td>
+                    </tr>
+                </table>
+                <a href="#" class="btn btn-danger">Delete Account</a>
+            </div>
+        </div>
+    </section>
+    <script src="./js/script.js"></script>
+</body>
+
+</html>
